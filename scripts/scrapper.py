@@ -2,15 +2,18 @@ import sys
 from numpy import *
 from matplotlib import pyplot as plt
 
+# string variable pointing to filesystem location of csv
 fn="../data/data_provinces.csv"
 
+# loading file with 3 columns
 name=loadtxt(fn, unpack=True, delimiter=',', skiprows=1, dtype='a',
-usecols=arange(1))
+usecols=arange(1)) # array defined for the first column
 
 region=loadtxt(fn, unpack=True, delimiter=',', skiprows=1, dtype='a',
-usecols=arange(1)+1)
+usecols=arange(1)+1) # array defined  for the second column
 
-population,lifeExpectancy,incomePerCapita,expenditurePerCapita=loadtxt(fn,unpack=True, delimiter=',', skiprows=1,usecols=arange(4)+2)
+population,lifeExpectancy,incomePerCapita,expenditurePerCapita=loadtxt(fn,unpack=True, delimiter=',', skiprows=1,usecols=arange(4)+2) # array defined for the remaining columns
+
 
 region_list=unique(region)
 color_list=array(['r', 'b', 'r', 'c', 'r','g','b','b','r','b','g','c','r','b','c','b','r'])
