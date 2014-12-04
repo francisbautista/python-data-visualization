@@ -39,7 +39,7 @@ def graph(sort_dict):
     plt.xlim((0,100))
     plt.xlabel("Life Expectancy")
     plt.ylabel("Regions")
-    plt.title("Regional Life Expectancy of the Philippines")
+    plt.title("Regional Average Life Expectancy of the Philippines")
     plt.savefig("../fig/Life Expectancy.png")
     plt.show()
 
