@@ -14,15 +14,17 @@ usecols=arange(1)+1) # array defined  for the second column
 
 population,lifeExpectancy,incomePerCapita,expenditurePerCapita=loadtxt(fn,unpack=True, delimiter=',', skiprows=1,usecols=arange(4)+2) # array defined for the remaining columns
 
-
+# processing for data visualization using matplotlib
 region_list=unique(region)
 color_list=array(['r', 'b', 'r', 'c', 'r','g','b','b','r','b','g','c','r','b','c','b','r'])
 colors=zeros(len(name), dtype='a')
 
+# list length and assign elements a color
 for i in arange(len(name)):
     colors[i]=color_list[region_list==region[i]][0]
 
 plt.clf()
+# plot elements
 plt.scatter(incomePerCapita,lifeExpectancy, s=population/min(population)*20, c=colors, alpha=0.5)
 # plt.xscale(2)
 plt.show()
