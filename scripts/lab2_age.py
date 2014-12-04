@@ -28,14 +28,15 @@ def ageCounter(region_val):
     reg_index = where(region==region_val)
     for i in range(0,len(reg_index[0])):
         sum = sum + lifeExpectancy[reg_index[0][i]]
-    return sum
+    avg = sum/len(reg_index[0])
+    return avg
 
 # Set x and y labels and values for barplot
 # and then graph values and save in fig folder
 def graph(sort_dict):
     plt.yticks(range(len(sort_dict)), sort_dict.keys(), rotation=45, size='small')
     plt.barh(range(len(sort_dict)), sort_dict.values())
-    plt.xlim((0,500))
+    plt.xlim((0,100))
     plt.xlabel("Life Expectancy")
     plt.ylabel("Regions")
     plt.title("Regional Life Expectancy of the Philippines")
