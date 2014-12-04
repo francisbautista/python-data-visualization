@@ -34,8 +34,8 @@ def ageCounter(region_val):
 # Set x and y labels and values for barplot
 # and then graph values and save in fig folder
 def graph(sort_dict):
-    plt.yticks(range(len(sort_dict)), sort_dict.keys(), rotation=45, size='small')
-    plt.barh(range(len(sort_dict)), sort_dict.values())
+    plt.yticks(range(len(sort_dict)), sorted(sort_dict.keys(), key=sort_dict.get), rotation=45, size='small')
+    plt.barh(range(len(sort_dict)), sorted(sort_dict.values()))
     plt.xlim((0,100))
     plt.xlabel("Life Expectancy")
     plt.ylabel("Regions")
