@@ -27,9 +27,16 @@ def ageCounter(region_val):
     sum = 0
     reg_index = where(region==region_val)
     for i in range(0,len(reg_index[0])):
-        sum = sum + lifeExpectancy[reg_index[0][i]]
-    avg = sum/len(reg_index[0])
+        sum = sum + (lifeExpectancy[reg_index[0][i]] * population[reg_index[0][i]])
+    avg = sum/popCounter(region_val)
     return avg
+
+def popCounter(region_val):
+    sum = 0
+    reg_index = where(region==region_val)
+    for i in range(0,len(reg_index[0])):
+        sum = sum + population[reg_index[0][i]]
+    return sum
 
 # Set x and y labels and values for barplot
 # and then graph values and save in fig folder
