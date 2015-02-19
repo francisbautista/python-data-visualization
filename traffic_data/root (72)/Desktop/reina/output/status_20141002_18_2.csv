@@ -1,0 +1,6 @@
+#lineID, stationID, statusN, statusS, timestamp
+0, 0, M, L, 6:16
+0, 1, L, L, 6:16
+0, 2, M, M, 6:16
+0, 3, L, L, 6:16
+0, 4, M, M, 6:16
